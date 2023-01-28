@@ -9,10 +9,10 @@
 </head>
 <body>
 <div class="reloj">
-
-    <p class="fecha"></p>
-    <p class="tiempo"></p>
     
+    <p class="tiempo"></p>
+    <p class="fecha"></p>
+        
     
 </div>
 <script>
@@ -25,7 +25,7 @@
         let f=new Date(), 
             dia=f.getDate(),
             mes=f.getMonth()+1,
-            agno=f.getFullYear(),
+            axo=f.getFullYear(),
             diaSemana=f.getDay();
 
         dia=('0'+dia).slice(-2);
@@ -34,9 +34,9 @@
         let timeString =f.toLocaleTimeString();
         $tiempo.innerHTML=timeString;
 
-        let semana=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
+        let semana=['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
         let showSemana=(semana[diaSemana])
-        $fecha.innerHTML=`${agno}-${mes}-${dia}-${showSemana}`;
+        $fecha.innerHTML=`${axo}-${mes}-${dia}-${showSemana}`;
     }
 
     setInterval(() =>{ digitalClock()}, 1000);
